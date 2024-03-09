@@ -1,0 +1,9 @@
+accelerate==0.27.2
+transformers==4.34.1
+intel_extension_for_transformers==1.2.2
+intel_extension_for_pytorch==2.1.100
+neural_speed==0.2
+torch==2.1.1
+pydantic==2.6.3
+sentencepiece==0.2.0
+einops==0.7.0
