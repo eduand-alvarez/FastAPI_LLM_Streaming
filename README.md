@@ -22,7 +22,7 @@ pip install -r requirements.txt
 Run the serve.py script to start the server:
 
 ```bash
-uvicorn serve:app --host 0.0.0.0 --port 5004
+python serve.py
 ```
 This command starts the FastAPI application on port 5004, making it accessible on your network.
 
