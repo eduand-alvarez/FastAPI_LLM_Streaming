@@ -24,7 +24,6 @@ warnings.filterwarnings("ignore")
 
 # neural_chat_7B_v1_1
 logger.info("loading Intel/neural-chat-7b-v1-1")
-neural_chat_7B_v1_1_streamer_queue = Queue()
 neural_chat_7B_v1_1_Model, neural_chat_7B_v1_1_Tokenizer = ITREXLoader('Intel/neural-chat-7b-v1-1')
 
 # neural_chat_7B_v3_1
@@ -71,6 +70,7 @@ async def stream(payload:InferencePayload):
     
     if model == 'Intel/neural-chat-7b-v1-1':
         logger.info("Intel/neural-chat-7b-v1-1 selected for inference")
+        neural_chat_7B_v1_1_streamer_queue = Queue()
         neural_chat_7B_v1_1_Streamer = CustomStreamer(neural_chat_7B_v1_1_streamer_queue, neural_chat_7B_v1_1_Tokenizer, True)
         return StreamingResponse(response_generator(payload.query, neural_chat_7B_v1_1_Model, 
                                                     neural_chat_7B_v1_1_Tokenizer, neural_chat_7B_v1_1_Streamer, 
@@ -83,4 +83,4 @@ async def stream(payload:InferencePayload):
     #                                                neural_chat_7B_v3_1_streamer_queue), media_type='text/event-stream')
 
 if __name__ == "__main__":
-    uvicorn.run("serve:app", host="0.0.0.0", port=5004, log_level="info")
+    uvicorn.run("serve:app", host="0.0.0.0", port=8080, log_level="info")
