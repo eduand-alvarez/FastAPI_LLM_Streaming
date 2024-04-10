@@ -3,7 +3,7 @@ from threading import Thread
 
 def start_generation(query, model, tokenizer, streamer):
     
-    system_message = "You are assistant that behaves very professionally. ou will only provide the answer \
+    system_message = "You are assistant that behaves very professionally. You will only provide the answer \
     if you know the answer. If you do not know the answer, you will say I dont know."
     
     template = f"""
