@@ -30,12 +30,6 @@ This command starts the FastAPI application on port 5004, making it accessible o
 
 Once the server is running, you can make HTTP GET requests to the /query-stream/ endpoint to interact with the deployed LLM. The request should include the query parameter and the selected_model parameter to specify the model you wish to use for inference.
 
-Example using curl:
-
-```bash
-curl "http://localhost:5004/query-stream/?query=Hello%20world&selected_model=Intel/neural-chat-7b-v1-1"
-```
-
 ## Supported Models
 Currently, the server is configured to support specific models from Hugging Face. These models are defined within the serve.py script and can be easily extended by modifying the ITREXLoader function within loader.py.
 
