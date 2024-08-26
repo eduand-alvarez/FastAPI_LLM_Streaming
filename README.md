@@ -11,8 +11,8 @@ The project includes a Python script (`serve.py`) for setting up a FastAPI serve
 To get started, clone this repository and install the required dependencies.
 
 ```bash
-git clone https://github.com/yourusername/your-repository-name.git
-cd your-repository-name
+git clone https://github.com/eduand-alvarez/FastAPI_LLM_Streaming.git
+cd FastAPI_LLM_Streaming
 pip install -r requirements.txt
 ```
 
